@@ -1,0 +1,70 @@
+elcome to SWI-Prolog (threaded, 64 bits, version 10.0.2)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+51 ?- consult(['c:/Users/zhmmt/Downloads/Lab04_family_facts.pl']).
+true.
+
+
+52 ?- house = house.
+true.
+
+why : Both are exactly the same .
+
+
+53 ?- house = abc.
+false.
+
+why : house and abc are different.
+
+
+54 ?- edge(a,b) = edge(C,b).
+C = a.
+
+why : The structures match, so C becomes a.
+
+
+
+55 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+why : Both variables can take the corresponding values.
+
+56 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+why : Both variables can take the corresponding values.
+
+
+57 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+
+why : A matches a, and B matches the whole compound term f(g,h).
+
+58 ?-  edge(A,A) = edge(b,c).
+false.
+
+why : A would need to be both b and c, but they are different.
+
+59 ?- edge(A,A) = edge(b,b).
+A = b.
+
+why : Both positions contain b, so A = b works.
+
+60 ?- A = B, B = f.
+A = B, B = f.
+
+why : A and B unify, then B becomes f, so logically both are f.
+
+61 ?-  A = B, B = f, A = e.
+false.
+
+why : After B = f, A is also f; then Prolog cannot unify f with e.
+
+

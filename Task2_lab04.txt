@@ -1,0 +1,50 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 10.0.2)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+66 ?- consult(['c:/Users/zhmmt/Downloads/Lab04_family_facts.pl']).
+true.
+
+67 ?- female(X).
+X = sara ;
+X = nora.
+
+why : list all the females in the knowledge base.
+
+68 ?- male(X).
+X = ali ;
+X = ahmad ;
+X = muhammad ;
+X = faisal ;
+X = hassan ;
+X = khan.
+
+why : list all the males in the knowledge base.
+
+
+69 ?- parent(X, Y), parent(Y, faisal).
+X = ali,
+Y = muhammad .
+
+why: Muhammad is Faisal's parent, and Ali is Muhammad's parent.
+
+70 ?- parent(ahmad, X), female(X).
+X = sara ;
+X = nora .
+
+why : Sara and Nora are Ahmad's children and both are female.
+
+71 ?- parent(X, ahmad), parent(X, muhammad).
+X = ali.
+
+why : Ali is the parent of both Ahmad and Muhammad.
+
+72 ?- male(khan), parent(X, khan), parent(X, nora).
+X = ahmad.
+
+Why: Khan is male, and Ahmad is the parent of both Khan and Nora.
+
+73 ?- 
